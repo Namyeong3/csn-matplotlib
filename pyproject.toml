@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csn-matplotlib"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10,<3.11",   # it reaches into matplotlib's own layout and drawing: the version it was made with
+    "numpy",
+    "PySide6>=6.8",
+    "psutil",
+]
+
+[tool.setuptools]
+packages = ["csn_matplotlib"]
+
+[tool.setuptools.package-data]
+csn_matplotlib = ["icons/*.svg", "spinner/*.png"]
